@@ -1,0 +1,21 @@
+8/26/2021
+- scraped discord messages to make a training dataset
+- scraper: https://github.com/Tyrrrz/DiscordChatExporter/
+- message source: Aerin Chu, who kindly gave permission for us to use her messages
+- pasted basic markovify program
+comments:
+  - make sure program can detect the end of a sentence/phrase; people don't usually fully punctuate discord messages
+  - denote end of sentence/phrase?? when do people split up their messages
+  - unconventional language: misspelled words ("heyyyyy"), emojis (":3"), keysmashes ("sdfjsk")
+  - sentiment analysis? 
+
+
+8/27/2021
+- cleaned aerin1.txt --> aerin1cleaned1.txt
+- ran through markovify
+- modified default call so that markovify delineates new lines as "sentences" rather than looking for punctuation
+
+comments:
+  - need to consider what the bot is responding to!
+  - use markovify.NewlineText to delineate new segment of text?* done
+  

@@ -1,0 +1,32 @@
+{
+  "files": {
+    "cleaner1.py": [
+      {
+        "id": "da01c27e-857b-423c-82c8-a367bd6ceee6",
+        "line": 15,
+        "version": 805,
+        "index": 346
+      },
+      {
+        "id": "4c13c69d-53ac-4f01-bb0f-1e145e7d7fcd",
+        "line": 15,
+        "version": 805,
+        "index": 346
+      }
+    ],
+    "main.py": [
+      {
+        "id": "3621f649-0c3a-4ce4-8a49-2c8f254b4167",
+        "line": 8,
+        "version": 73,
+        "index": 141
+      },
+      {
+        "id": "12ba5620-db34-4628-89f6-646d137a69c9",
+        "line": 19,
+        "version": 27,
+        "index": 483
+      }
+    ]
+  }
+}
