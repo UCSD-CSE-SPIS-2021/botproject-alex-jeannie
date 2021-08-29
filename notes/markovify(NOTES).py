@@ -1,3 +1,7 @@
+# this file is not operational
+# just a copy-paste of the markovify source code
+# for reference
+
 import re
 import json
 import random
@@ -5,7 +9,7 @@ from .splitters import split_into_sentences
 from .chain import Chain, BEGIN
 from unidecode import unidecode
 
-DEFAULT_MAX_OVERLAP_RATIO = 0.7
+DEFAULT_MAX_OVERLAP_RATIO = 0.8
 DEFAULT_MAX_OVERLAP_TOTAL = 15
 DEFAULT_TRIES = 10
 

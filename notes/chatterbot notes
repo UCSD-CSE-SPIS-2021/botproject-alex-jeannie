@@ -1,0 +1,20 @@
+https://chatterbot.readthedocs.io/
+
+https://chatterbot.readthedocs.io/en/stable/faq.html#what-kinds-of-machine-learning-does-chatterbot-use
+
+Chatterbot uses...
+
+1. Search algorithms
+- used to quickly retrieve possible responses using...
+  - similarity of input to known inputs
+  - how freq similarly known responses occur
+  - likeliness of input to fit into known category
+
+2. Classification algorithms (naive Bayesian classification)
+- used to determine if input statement meets criteria to warrant certain response
+
+We know about these (kinda) YAY
+
+Training?
+- takes in conversation data
+- how do we make it so the

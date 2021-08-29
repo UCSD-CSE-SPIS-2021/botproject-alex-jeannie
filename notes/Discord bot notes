@@ -1,0 +1,7 @@
+https://realpython.com/how-to-make-a-discord-bot-python/
+Create bot on discord- there is a setting for that.
+Discord has a specific API and terminology (guild is equal to server)
+import discord.py in order to gain access to discord bot specific functions (import discord?)
+Create an instance of client inside the source code to track state and handle the connection to discord 
+client.event allows for the bot to respond to events
+on_message() allows for the bot to respond specifically to new messages

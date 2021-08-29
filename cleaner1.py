@@ -23,7 +23,7 @@ for i in range(len(lines)): # each line; i = line number
 
 print (cleanList)
 
-with open('aerin1cleaned1.txt', 'w') as w: # 'w' write
+with open('aerin1clean.txt', 'w') as w: # 'w' write
   for i in range(len(cleanList)):
     w.write(cleanList[i]+"\n") # write list item
     i+=1
