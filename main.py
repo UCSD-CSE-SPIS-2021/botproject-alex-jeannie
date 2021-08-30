@@ -45,8 +45,8 @@ for i in range(len(convo)//2):
     trainer.train(convo[2*i:2*i+2])
 
 # printing response
-response = chatbot.get_response("i'm looking at my classes")
-print(response)
+#response = chatbot.get_response("i'm looking at my classes")
+#print(response)
 
 # error: no spacy
 #   installed spacy
@@ -68,6 +68,7 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+    # useful variables
     username = str(message.author).split('#')[0] # bruh#1029 --> "bruh"
     user_message = str(message.content)
     channel = str(message.channel.name)
@@ -75,10 +76,13 @@ async def on_message(message):
 
     print(f'{username}: {user_message} ({channel})') # prints in console 'loshy: hey (general)'
     
+    # actual bot stuff
     if message.author == client.user: # prevent bot from replying to itself
         return 
     
     if message.channel.name == 'aerinbot-test':
-        await message.channel.send(text_model.make_sentence(test_output=False)) # send markov generated reply
+        #await message.channel.send(text_model.make_sentence(test_output=False)) # send markov generated reply
+        response = chatbot.get_response(user_message)
+        await message.channel.send(response)
 
 client.run(TOKEN)
