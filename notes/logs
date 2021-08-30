@@ -1,0 +1,85 @@
+8/26/2021
+- scraped discord messages to make a training dataset
+- scraper: https://github.com/Tyrrrz/DiscordChatExporter/
+- message source: Aerin Chu, who kindly gave permission for us to use her messages
+- pasted basic markovify program
+comments:
+  - make sure program can detect the end of a sentence/phrase; people don't usually fully punctuate discord messages
+  - denote end of sentence/phrase?? when do people split up their messages
+  - unconventional language: misspelled words ("heyyyyy"), emojis (":3"), keysmashes ("sdfjsk")
+  - sentiment analysis? 
+
+
+8/27/2021
+- cleaned aerin1.txt --> aerin1cleaned1.txt (data preprocessing)
+- ran through markovify
+- modified default call so that markovify delineates new lines as "sentences" rather than looking for punctuation
+
+comments:
+  - need to consider what the bot is responding to! how??
+  - use markovify.NewlineText to delineate new segment of text?* done
+  - ideas:
+    - make it so bot can also return wordclouds? word frequencies, etc.
+    - live scraping? make it so it updates every time
+    - mood? sentiment analysis?
+  - ask josh for discord bot help!!
+  Niema: 
+  - state_size is order of markov chain (how many previous words the generated word depends on)
+  - for live scraping: update chain, retrain
+  - classify types of messages? for replies -- jokes, positive/negative (sentiment analysis)
+
+8/28/2021
+- intent classification
+  - ex. greetings, identity
+- scraping messages + replies
+- after scraping, use markov chain to generate different answers for certain questions
+- NLU (natural language understanding) datasets, machine learning datasets, NLP datasets
+- movie script datasets
+- python chatbot library
+
+Goals list:
+- Bare minimum - discord bot that generates aerinlike sentences
+  - how do we make it more realistic?
+- "good to have" goal - discord bot that can respond to text
+  - classifies text (sentiment/mood and type of response), message it's responding to
+- stretch goal - discord bot retrains itself live given a response 
+
+Steps?
+1. make a markov generator + train it on aerin's texts (DONE)
+2. classify intent of these texts
+3. scrape data + classify intent of messages it could respond to (the messages aerin was responding to)
+(unclear zone)
+
+?. discord bot basics, coding, how to implement this code into discord, how to get inputs, how to scrape live messages
+*** 8/31-9/2 (last three days): do the discord stuff
+
+back to 8/28/21:
+  to do:
+  - overall: create a working chatbot!
+  - import chatterbot
+  - scrape data!
+  - use data to train bot
+
+8/29/21:
+- started formatting aerinconvo
+  - chatterbot training section: trains bot using input-response format
+  - take all conversations and format them to someone else, aerin's response x1000
+
+- couldn't install chatterbot on replit (takes eons, error: disk quota exceeded)
+  - using own IDE: VSCode
+  - worked! very fast
+  - *will use VSCode to run chatterbot, replit to update logs + preprocess data
+    - find way to upload everything to github
+    - might just move to VS
+
+- how to automate data preprocessing?
+  - format into chatterbot conversation
+  - lines 8000 - 12000 (jenny - aerin convo)
+
+- explored chatterbot
+    - trained it on test dialogue + returned response
+  - continuing to format dialogue
+
+  * how to retrain bot from scratch
+  ** chatterbot doesn't seem to differentiate between speaker 1 and speaker 2
+
