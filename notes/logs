@@ -98,6 +98,17 @@ next up:
 - getting chatterbot to work with discord
 - data preprocessing??? how do we make this easier
 
+8/30/21:
+
 Henry:
 - look into chatterbot's default datasets to see how it works / how to format it
 - look into removing extraneous
+
+Done:
+- fixed + finalized cleaner (data preprocessor)
+- moved to vscode completely, updated GitHub (ty yukati)
+- Aerin-Jenny conversation cleaned up and sorted into conversation style (call-response style)
+- wrote call-response training code
+- ran chatterbot on cleaned snippet of aerin-jenny conversation
+- created working discord bot
+  - sends markov generated messages
