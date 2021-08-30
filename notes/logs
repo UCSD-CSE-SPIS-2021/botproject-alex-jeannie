@@ -60,6 +60,8 @@ back to 8/28/21:
   - scrape data!
   - use data to train bot
 
+  ERROR: couldn't download chatterbot on replit IDE 
+
 8/29/21:
 - started formatting aerinconvo
   - chatterbot training section: trains bot using input-response format
@@ -83,3 +85,13 @@ back to 8/28/21:
   * how to retrain bot from scratch
   ** chatterbot doesn't seem to differentiate between speaker 1 and speaker 2
 
+late 8/29/21:
+- rewrote + optimized cleaner (fixed reactions, etc)
+- successfully built a discord bot (on VSCode) that can generate markovified text on command (not aerin's, but nonetheless)!
+  - *not always online though; smth about keeping it online through heroku?? o_o
+- now have basic knowledge to implement actual bot
+
+next up:
+- speaker differentiation: how to get chatterbot to only speak like aerin
+  - idea: train it on two line "call - response" exchanges (responses being aerin's) to avoid confusion
+- getting chatterbot to work with discord
