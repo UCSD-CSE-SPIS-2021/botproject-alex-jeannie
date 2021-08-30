@@ -53,3 +53,32 @@ print(response)
 # error: chatterbot does not support spacy v3.0
 #   installed spacy v2.3.5 (...install spacy==2.3.5)
 #   py -m spacy download en
+
+
+### discord bot ###
+
+TOKEN = 'ODgyMDM1ODk5NTUzMTgxNzY3.YS1h8Q.uF3YXoFNetG6hT_pc2Em5bo1fWs'
+
+client = discord.Client()
+
+@client.event
+async def on_ready():
+    print(f'{client.user.name} has connected to Discord!')
+
+
+@client.event
+async def on_message(message):
+    username = str(message.author).split('#')[0] # bruh#1029 --> "bruh"
+    user_message = str(message.content)
+    channel = str(message.channel.name)
+    list_message = user_message.split(' ') # splits messages into list of words
+
+    print(f'{username}: {user_message} ({channel})') # prints in console 'loshy: hey (general)'
+    
+    if message.author == client.user: # prevent bot from replying to itself
+        return 
+    
+    if message.channel.name == 'aerinbot-test':
+        await message.channel.send(text_model.make_sentence(test_output=False)) # send markov generated reply
+
+client.run(TOKEN)
