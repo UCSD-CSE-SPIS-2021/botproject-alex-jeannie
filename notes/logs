@@ -90,8 +90,14 @@ late 8/29/21:
 - successfully built a discord bot (on VSCode) that can generate markovified text on command (not aerin's, but nonetheless)!
   - *not always online though; smth about keeping it online through heroku?? o_o
 - now have basic knowledge to implement actual bot
+- retrain bot from scratch: chatbot.storage.drop()
 
 next up:
 - speaker differentiation: how to get chatterbot to only speak like aerin
   - idea: train it on two line "call - response" exchanges (responses being aerin's) to avoid confusion
 - getting chatterbot to work with discord
+- data preprocessing??? how do we make this easier
+
+Henry:
+- look into chatterbot's default datasets to see how it works / how to format it
+- look into removing extraneous

@@ -1,5 +1,6 @@
 import discord
 import markovify
+import os, sys
 
 # VSCode: py -m pip install []
 
@@ -27,28 +28,24 @@ for i in range(3):
 
 # getting bot
 from chatterbot import ChatBot
-chatbot = ChatBot("Gyuy") # make new chatbot
+chatbot = ChatBot("aerin") # make new chatbot
 chatbot.storage.drop() ###! resets database (everything it trained on)
 
 # training 
 from chatterbot.trainers import ListTrainer
 
-conversation = [
-    "bru!",
-    "belh.",
-    "thank.",
-    "gru",
-    "yo",
-    "yo-yo",
-    "helow"
-]
+# get dataset file
+with open(os.path.join(sys.path[0],"ajconvo2clean.txt"), encoding="utf8") as f: # ADDED encoding="utf8" (FIXED UnicodeDecodeError)
+    convo = f.readlines() # read file into list of strings
 
 trainer = ListTrainer(chatbot)
 
-trainer.train(conversation)
+for i in range(len(convo)//2):
+    print(convo [2*i:2*i+2])
+    trainer.train(convo[2*i:2*i+2])
 
 # printing response
-response = chatbot.get_response("groo")
+response = chatbot.get_response("i'm looking at my classes")
 print(response)
 
 # error: no spacy
