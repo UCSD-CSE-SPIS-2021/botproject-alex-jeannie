@@ -117,3 +117,43 @@ Done:
   - it's learning??? from our responses??? (HOW)
 
 - idea: train bot using reactions! use reactions as some kind of "score" for how realistic/funny it's being
+
+8/31/21:
+- go through chatterbot's documentation
+- opened training database file in sqlite to view it as a table
+
+Notes:
+- chatterbot corpus: other training format. call/response but is formatted in a -- call - response format
+  https://github.com/gunthercox/chatterbot-corpus/blob/master/chatterbot_corpus/data/english/
+  - are multiple community-made corpii like "greetings, humor", etc
+- how can we modify it so it doesn't learn from our messages?
+  - maybe make it so the inputted response is never added as a possible output? how
+- how do we separate greetings, jokes, etc into a separate training thing?
+- how can we "untrain" it?
+  - chatterbot --> storage --> sql_storage.py (https://github.com/gunthercox/ChatterBot/blob/master/chatterbot/storage/sql_storage.py)
+  - several useful functions including "remove"
+  - does this "untrain" the bot?
+- is it possible to limit who the bot learns from (aerin only)?
+
+- chatterbot --> examples (https://github.com/gunthercox/ChatterBot/blob/master/examples/))
+  - specific response example?
+  - *learning feedback example (!) --> use reactions to score?
+  - default response example --> maximum_similarity_threshold?
+    - logic adapters
+
+Henry: 
+  - implement markov chain by using own training class
+  - more data / look into intent classification
+    - intent classification --> dividing inputs into categories
+    - make own trainer class
+  - limit learning after training!
+
+Did:
+  - figured out how to stop chatterbot from learning post-training!
+  - started writing new cleaner
+
+To do:
+ - finish writing new cleaner (cleaner2) for conversation data (concatenate multi-line responses)
+ - run aerinjennconvo1.txt through chatterbot
+ - explore chatterbot corpus function
+ - write new training class w/ markov chains
