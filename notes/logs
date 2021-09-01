@@ -147,6 +147,7 @@ Henry:
     - intent classification --> dividing inputs into categories
     - make own trainer class
   - limit learning after training!
+  - 
 
 Did:
   - figured out how to stop chatterbot from learning post-training!

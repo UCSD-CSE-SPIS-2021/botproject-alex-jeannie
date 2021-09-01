@@ -36,12 +36,13 @@ chatbot.storage.drop() ###! resets database (everything it trained on)
 from chatterbot.trainers import ListTrainer
 
 # get dataset file
-with open(os.path.join(sys.path[0],"aerin1clean.txt"), encoding="utf8") as f: # ADDED encoding="utf8" (FIXED UnicodeDecodeError)
+with open(os.path.join(sys.path[0],"ajconvo1clean.txt"), encoding="utf8") as f: # ADDED encoding="utf8" (FIXED UnicodeDecodeError)
     convo = f.readlines() # read file into list of strings
 
+print(convo)
 trainer = ListTrainer(chatbot)
 
-trainer.train(convo)
+#trainer.train(convo)
 
 #for i in range(len(convo)//2):
     #print(convo [2*i:2*i+2])

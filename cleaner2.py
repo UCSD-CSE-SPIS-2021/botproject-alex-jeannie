@@ -7,24 +7,27 @@ with open('aerinjennconvo1.txt', 'r', encoding="utf8") as a: # first, read txt f
   lines = a.readlines()
 
 print(lines)
-# have a string for appending
-# concatenate every line after "[" starting line to string (with \n)
+
+# want to get a list with strings of dialogue, one string per speaker (strdialogue)
+# because chatterbot runs by string
+# concatenate multi-line texts by one speaker into one strdialogue
+
 # if i is even, add (?) to the beginning?
 # if i is odd, add (A) (aerin's response)
 
 for i in range(len(lines)): # each line; i = line number
-  if lines[i][0] == "[" or lines[i] == '\n': # new person speaking
-    strdialogue = "" # initializes string of dialogue (we want one string for one person's speech)
-  else:
-    #print(lines[i].strip())
-    strdialogue = strdialogue + lines[i].strip()
-  print(strdialogue)
-  #cleanList.append(strdialogue) # take next line; take off \n at end
+  strdialogue = ""
+  j = 0
+  if lines[i][0] == "[": # new person speaking
+    while lines[i+j] != "\n" and i + j < len(lines)-1: # while the line isn't blank and the index is not out of bounds
+      strdialogue += lines[i+j+1].strip() + "\\n" # add line to string; \\n will print to \n in new file
+      j += 1
+    #print(strdialogue,end='') # extra spaces was due to print()
+    cleanList.append(strdialogue[:-4]) # gets rid of \\n\\n at the end
 
-#print (cleanList)
+print(cleanList)
 
-with open('aerinjennconvoclean.txt', 'w') as w: # 'w' write
+with open('ajconvo1clean.txt', 'w', encoding="utf8") as w: # 'w' write
   for i in range(len(cleanList)):
     w.write(cleanList[i]+"\n") # write list item
     i+=1
-
