@@ -12,7 +12,7 @@ with open("aerin1clean.txt", encoding="utf8") as f: # ADDED encoding="utf8" (FIX
     text = f.read()
 
 # Build the model.
-text_model = markovify.NewlineText(text) # new line --> no punctuation for texts
+text_model = markovify.NewlineText(text, state_size=3) # new line --> no punctuation for texts
 
 # Print five randomly-generated sentences
 for i in range(5):
@@ -28,6 +28,7 @@ for i in range(3):
 # terminal: pip install chatterbot
 # VSCode: py -m pip install chatterbot
 
+'''
 ## getting bot
 from chatterbot import ChatBot
 from chatterbot.response_selection import get_most_frequent_response
@@ -78,7 +79,7 @@ for i in range(len(convo)//2):
     print(convo[2*i:2*i+2])
     trainer.train(convo[2*i:2*i+2])
 
-
+'''
 
 # printing response
 #response = chatbot.get_response("i'm looking at my classes")
@@ -89,6 +90,18 @@ for i in range(len(convo)//2):
 # error: chatterbot does not support spacy v3.0
 #   installed spacy v2.3.5 (...install spacy==2.3.5)
 #   py -m spacy download en
+
+
+import nltk
+import random
+#nltk.download('stopwords')
+#from nltk.corpus import stopwords
+
+# "Stop words" that you might want to use in your project/an extension
+#stop_words = set(stopwords.words('english'))
+
+from rake_nltk import Rake
+
 
 
 ### discord bot ###
@@ -110,6 +123,8 @@ async def on_message(message):
     channel = str(message.channel.name)
     list_message = user_message.split(' ') # splits messages into list of words
 
+    msg_keywords = keywords(user_message)
+
     print(f'{username}: {user_message} ({channel})') # prints in console 'loshy: hey (general)'
     
     # actual bot stuff
@@ -120,8 +135,28 @@ async def on_message(message):
     
     if message.channel.name == 'aerinbot-test':
         #await message.channel.send(text_model.make_sentence(test_output=False)) # send markov generated reply
-        response = chatbot.get_response(user_message) # get a response from chatterbot 
-        await message.channel.send(response) # send it
+        #response = chatbot.get_response(user_message) # get a response from chatterbot 
+        #await message.channel.send(response) # send it
+
+        #await message.channel.send(msg_keywords) # send it
+        
+        new_sent = ""
+
+        for i in range(len(msg_keywords)):
+            if new_sent == "":
+                try:
+                    new_sent = text_model.make_sentence_with_start(msg_keywords[i])
+                except:
+                    continue
+        
+        print(new_sent)
+
+        if new_sent == "":
+            await message.channel.send("hiiii this can't be generated ;3 ")
+        else:
+            await message.channel.send(new_sent)
+
+        return
 
         # feedback learning through discord reactions:       
         #get_feedback(user_message, response, channel)
@@ -129,5 +164,11 @@ async def on_message(message):
         #def get_feedback():
         #    if 
 
+def keywords(message):
+    rake = Rake()
+    text = message
+    rake.extract_keywords_from_text(text)
+    keyword_extracted = rake.get_ranked_phrases()
+    return keyword_extracted
 
 client.run(TOKEN)
