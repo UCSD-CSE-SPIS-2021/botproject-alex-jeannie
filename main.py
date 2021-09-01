@@ -22,13 +22,24 @@ for i in range(5):
 for i in range(3):
     print(text_model.make_short_sentence(280))
 
+
 ### chatterbot ###
+
 # terminal: pip install chatterbot
 # VSCode: py -m pip install chatterbot
 
 ## getting bot
 from chatterbot import ChatBot
-chatbot = ChatBot("aerin", read_only = True) # make new chatbot
+from chatterbot.response_selection import get_most_frequent_response
+#chatbot = ChatBot("aerin", read_only = True) # make new chatbot
+
+chatbot = ChatBot(
+    'aerin',
+    read_only = True,
+    storage_adapter='chatterbot.storage.SQLStorageAdapter',
+    response_selection_method=get_most_frequent_response
+)
+
 #                          *** read_only = True --> STOP LEARNING after training
 chatbot.storage.drop() ###! resets database (everything it trained on)
 
@@ -44,9 +55,12 @@ trainer.train(
 trainer.train(
     'Aerincorpusgreetings'
 )
+
+# then train bot on discord dataset
+
 from chatterbot.trainers import ListTrainer
 
-## get data
+# get data
 
 #with open(os.path.join(sys.path[0],"ajconvo1clean.txt"), encoding="utf8") as f: # ADDED encoding="utf8" (FIXED UnicodeDecodeError)
 #    convo = f.readlines() # read file into list of strings
@@ -61,7 +75,7 @@ trainer = ListTrainer(chatbot)
 #trainer.train(convo)
 
 for i in range(len(convo)//2):
-    print(convo [2*i:2*i+2])
+    print(convo[2*i:2*i+2])
     trainer.train(convo[2*i:2*i+2])
 
 
@@ -100,12 +114,20 @@ async def on_message(message):
     
     # actual bot stuff
     if message.author == client.user: # prevent bot from replying to itself
+        await message.add_reaction("👍")
+        await message.add_reaction("👎")
         return 
     
     if message.channel.name == 'aerinbot-test':
         #await message.channel.send(text_model.make_sentence(test_output=False)) # send markov generated reply
-        response = chatbot.get_response(user_message)
-        print(response)
-        await message.channel.send(response)
+        response = chatbot.get_response(user_message) # get a response from chatterbot 
+        await message.channel.send(response) # send it
+
+        # feedback learning through discord reactions:       
+        #get_feedback(user_message, response, channel)
+
+        #def get_feedback():
+        #    if 
+
 
 client.run(TOKEN)

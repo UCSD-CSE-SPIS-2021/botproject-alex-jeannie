@@ -166,9 +166,32 @@ To do:
 
 To do:
 - train chatterbot on corpii (Done)
-- write new training class w/ markov chains
+- write new training class w/ markov chains (?)
+  - how?
+  - other idea: have chatterbot generate a response if it isn't confident about an answer
+    - generates from aerin1.txt
 - look into intent classification
 - look into the python pickle library
 - look into a feedback system
+
+idea: 
+- use tagged datasets for positive/negative reactions
+- tags = positive, negative
+
   extra:
   - custom goodbyes / using peoples' names
+  - instead of writing cleaners, write a new training class
+  - make bot always online (heroku)
+
+- how do we use all of aerin's data?
+
+- use markov chain on data to expand database before feeding
+- manipulate training class to also generate response
+  - generate_export_data
+  - find output function
+
+- split data into
+- chatterbot minimize cost function 
+  - want cost to be near 0
+  - when passing generated text through markov chain
+  
