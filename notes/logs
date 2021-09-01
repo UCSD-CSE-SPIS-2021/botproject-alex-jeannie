@@ -163,3 +163,12 @@ To do:
 
 9/1/21:
 - set up greetings + goodbyes corpii
+
+To do:
+- train chatterbot on corpii (Done)
+- write new training class w/ markov chains
+- look into intent classification
+- look into the python pickle library
+- look into a feedback system
+  extra:
+  - custom goodbyes / using peoples' names

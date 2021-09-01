@@ -1,20 +1,20 @@
-Categories:
--greetings
-Conversations:
---Hi!
- -hi @name
- -how’s everyone doing so far today? :3
- -good to see you again! :3
- -hiiiii!
- -hi :3
---Hello!
- -y'all how has today been for everyone?
- -hi!!!! how has your day been?
- -so, how has your day been?
- -how has your day been?
- -it really does
---How are you?
- -it's all good!!! how has your day been?
---Good morning!
- -good morninggggg :3
- -alsooooo good morning everyoneeee
+categories:
+- greetings
+conversations:
+- - Hi!
+  - hi @name
+  - how’s everyone doing so far today? :3
+  - good to see you again! :3
+  - hiiiii!
+  - hi :3
+- - Hello!
+  - y'all how has today been for everyone?
+  - hi!!!! how has your day been?
+  - so, how has your day been?
+  - how has your day been?
+  - it really does
+- - How are you?
+  - it's all good!!! how has your day been?
+- - Good morning!
+  - good morninggggg :3
+  - alsooooo good morning everyoneeee

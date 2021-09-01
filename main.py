@@ -33,6 +33,17 @@ chatbot = ChatBot("aerin", read_only = True) # make new chatbot
 chatbot.storage.drop() ###! resets database (everything it trained on)
 
 ## training 
+# Start by training our bot with corpus data
+from chatterbot.trainers import ChatterBotCorpusTrainer
+trainer = ChatterBotCorpusTrainer(chatbot)
+
+trainer.train(
+    'Aerincorpusfarewells'
+)
+
+trainer.train(
+    'Aerincorpusgreetings'
+)
 from chatterbot.trainers import ListTrainer
 
 ## get data
@@ -52,6 +63,8 @@ trainer = ListTrainer(chatbot)
 for i in range(len(convo)//2):
     print(convo [2*i:2*i+2])
     trainer.train(convo[2*i:2*i+2])
+
+
 
 # printing response
 #response = chatbot.get_response("i'm looking at my classes")
