@@ -93,6 +93,6 @@ async def on_message(message):
         #await message.channel.send(text_model.make_sentence(test_output=False)) # send markov generated reply
         response = chatbot.get_response(user_message)
         print(response)
-        #await message.channel.send(response)
+        await message.channel.send(response)
 
 client.run(TOKEN)
