@@ -152,9 +152,10 @@ Henry:
 Did:
   - figured out how to stop chatterbot from learning post-training!
   - started writing new cleaner
+  - update: finished writing new cleaner2.py!
+  - ran aerinjennconvo1.txt through chatterbot.
 
 To do:
- - finish writing new cleaner (cleaner2) for conversation data (concatenate multi-line responses)
- - run aerinjennconvo1.txt through chatterbot
  - explore chatterbot corpus function
  - write new training class w/ markov chains
+ - what is going on with the discord bot? sending the same message multiple times?
