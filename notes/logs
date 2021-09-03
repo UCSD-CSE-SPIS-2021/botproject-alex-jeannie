@@ -195,3 +195,14 @@ idea:
   - want cost to be near 0
   - when passing generated text through markov chain
   
+- tried a no chatterbot - markov based model:
+  -implemented rake to prioritize words
+  -Markov chain generated using specific words
+  - chatterbot seems to be the better alternative just for functionality (though we could use markov elsewhere)
+  
+- get_response: use markov chain somehow (known responses have priority)
+
+Things to work on:
+ - Markov chain will not generate with short words - maybe expand the scope of the markov chain
+ - Clean, format, and use aerin's responses from all of spis just-hanging-out to train Chatterbot
+ - For most data: possibly make a general spis-bot(need consent)
