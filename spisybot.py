@@ -39,14 +39,14 @@ from chatterbot.comparisons import *
 
 
 chatbot = ChatBot(
-    'aerin',
-    read_only = True, #***--> STOP LEARNING after training
+    'spisybot',
+    #***--> LEARN after training
     storage_adapter='chatterbot.storage.SQLStorageAdapter',
     response_selection_method=get_most_frequent_response,
     statement_comparison_function=LevenshteinDistance
 )
 
-chatbot.storage.drop() ###! resets database (everything it trained on)
+###chatbot.storage.drop() ###! resets database (everything it trained on)
 
 ## training 
 # corpus data
@@ -61,7 +61,7 @@ with open(("txtfiles/fullchatclean.txt"), encoding="utf8") as f: # ADDED encodin
     convo = f.readlines() # read file into list of strings
 
 trainer = ListTrainer(chatbot)
-trainer.train(convo)
+###trainer.train(convo)
 
 
 #   read as CALL/RESPONSE PAIRS

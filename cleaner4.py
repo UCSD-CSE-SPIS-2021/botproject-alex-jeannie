@@ -1,5 +1,5 @@
-# Jeannie Kim 9/1/21
-# cleaner 2 except now it takes call-response for particular person
+# Jeannie Kim 9/2/21
+# cleaner 3 but it writes to a new file (so that we can manually review the text)
 
 import os, sys
 

@@ -206,3 +206,17 @@ Things to work on:
  - Markov chain will not generate with short words - maybe expand the scope of the markov chain
  - Clean, format, and use aerin's responses from all of spis just-hanging-out to train Chatterbot
  - For most data: possibly make a general spis-bot(need consent)
+
+ 9/2/21:
+ - implemented corpusmaker, which can easily generate corpii to train chatterbot on
+  - useful for common prompts with set answers
+  - ex. greetings
+  - takes simple user command and creates + formats corresponding yaml file, trains chatterbot on it
+  - useful to train chatterbot multiple times on corpii
+ - created general spis-bot, which can return responses from chatterbot and markovify
+  - aerinbot can also return markov chain responses
+  - to respond with markov chain, just @ the bot
+
+- wrote cleaner4.py, which does the same thing as cleaner3, except that it writes a new file
+- moved text files to own folders
+- 
