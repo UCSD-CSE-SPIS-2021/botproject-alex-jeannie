@@ -6,7 +6,7 @@
 lines = list()
 cleanList = list()
 
-with open('aerin1.txt', 'r') as a: # first, read txt file into a list
+with open('txtfiles/just-hanging-out 2.txt', 'r', encoding="utf8") as a: # first, read txt file into a list
   lines = a.readlines()
 
 
@@ -16,7 +16,7 @@ for i in range(len(lines)): # each line; i = line number
 
 print (cleanList)
 
-with open('aerin1clean.txt', 'w') as w: # 'w' write
+with open('txtfiles/fullchatclean.txt', 'w', encoding="utf8") as w: # 'w' write
   for i in range(len(cleanList)):
     w.write(cleanList[i]+"\n") # write list item
     i+=1

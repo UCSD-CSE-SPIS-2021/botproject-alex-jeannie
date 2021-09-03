@@ -1,53 +1,83 @@
 categories:
 - greetings
 conversations:
-- - Hello
-  - Hi
-- - Hi
-  - Hello
-- - Greetings!
-  - Hello
-- - Hello
-  - Greetings!
-- - Hi, How is it going?
-  - Good
-- - Hi, How is it going?
-  - Fine
-- - Hi, How is it going?
-  - Okay
-- - Hi, How is it going?
-  - Great
-- - Hi, How is it going?
-  - Could be better.
-- - Hi, How is it going?
-  - Not so great.
-- - How are you doing?
-  - Good.
-- - How are you doing?
-  - Very well, thanks.
-- - How are you doing?
-  - Fine, and you?
-- - Nice to meet you.
-  - Thank you.
-- - How do you do?
-  - I'm doing well.
-- - How do you do?
-  - I'm doing well. How are you?
-- - Hi, nice to meet you.
-  - Thank you. You too.
-- - It is a pleasure to meet you.
-  - Thank you. You too.
-- - Top of the morning to you!
-  - Thank you kindly.
-- - Top of the morning to you!
-  - And the rest of the day to you.
-- - What's up?
-  - Not much.
-- - What's up?
-  - Not too much.
-- - What's up?
-  - Not much, how about you?
-- - What's up?
-  - Nothing much.
-- - What's up?
-  - The sky's up but I'm fine thanks. What about you?
+- - hi
+  - heyyyy :3
+  - hows it going?
+  - pretty good!!
+- - hi
+  - hiii
+  - hows it going?
+  - pretty good!
+- - hi
+  - hello!!
+  - hows it going?
+  - pretty good!
+- - hi
+  - heyyy
+  - hows it going?
+  - pretty good!
+- - hello
+  - heyyyy :3
+- - hello
+  - hiii
+- - hello
+  - hello!!
+- - hello
+  - heyyy
+- - hey
+  - heyyyy :3
+  - hows it going?
+  - pretty good!
+- - hey
+  - hiii
+- - hey
+  - hello!!
+- - hey
+  - heyyy
+- - sup
+  - heyyyy :3
+- - sup
+  - hiii
+- - sup
+  - hello!!
+- - sup
+  - heyyy
+- - whats up?
+  - heyyyy :3
+- - whats up?
+  - hiii
+- - whats up?
+  - hello!!
+- - whats up?
+  - heyyy
+- - sup
+  - heyyyy :3
+- - sup
+  - hiii
+- - sup
+  - hello!!
+- - sup
+  - heyyy
+- - wassup
+  - heyyyy :3
+- - wassup
+  - hiii
+- - wassup
+  - hello!!
+- - wassup
+  - heyyy
+- - nice to meet you!
+  - you too!
+- - hows it going?
+  - great!!
+- - hows it going?
+  - livinggg
+- - whats good
+  - great!!
+- - whats good
+  - livinggg
+- - how are you?
+  - great!!
+- - hows life?
+  - great!!

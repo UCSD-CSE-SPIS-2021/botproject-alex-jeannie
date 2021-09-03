@@ -45,4 +45,4 @@ def corpusmaker1(name, command):
 
     
 
-#corpusmaker1('grootings', 'hi,hello,hey/heyyyy :3,hiii')
+corpusmaker1('farewells', 'goodbye,bye,gtg,goodnight/byeeeee :3,awwww see you later!!! :3,see you!,bye!!')
